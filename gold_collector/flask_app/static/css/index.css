@@ -1,0 +1,52 @@
+* {
+    margin: 0px;
+    padding: 0px
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    padding-left: 10px;
+
+}
+
+.gold {
+    color: red;
+    padding-left: 10px;
+}
+
+.jobs {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.job {
+    flex: 4;
+    border: 3px solid black;
+    padding: 5px;
+    margin: 5px;
+}
+
+.zero {
+    color: gray;
+}
+
+.negative {
+    color: red;
+}
+
+.positive {
+    color: green;
+}
+
+.returns {
+    min-height: 0;
+    width: 850px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    border: 5px solid black;
+    padding: 10px;
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+    <title>Money</title>
+</head>
+<body>
+    <header class="header">
+        <h1>Your Gold</h1>
+        <h1 id="gold">{{session["gold"]}}</h1>
+    </header>
+    <div class="jobs">
+        <div class="job">
+            <form action="/process/gold" method="post">
+                <input type="hidden" name="job" value="pan">
+                <h3>The Pan</h3>
+                <p>(earns 0-3 golds)</p>
+                <button>Shake</button>
+            </form>
+        </div>
+        <div class="job">
+            <form action="/process/gold" method="post">
+                <input type="hidden" name="job" value="pickaxe">
+                <h3>The Pickaxe</h3>
+                <p>(earns 3-10 golds)</p>
+                <button>Pick</button>
+            </form>
+        </div>
+        <div class="job">
+            <form action="/process/gold" method="post">
+                <input type="hidden" name="job" value="gamble">
+                <h3>Gamble</h3>
+                <p>(earns/takes 25-35 golds)</p>
+                <button>Toss</button>
+            </form>
+        </div>
+        <div class="job">
+            <form action="/process/gold" method="post">
+                <input type="hidden" name="job" value="mine">
+                <h3>The Mine...</h3>
+                <p>(earns/takes 40-60golds)</p>
+                <p>(25% making it out alive!)</p>
+                <button>Toss</button>
+            </form>
+        </div>
+    </div>
+    <div class="returns">
+        {% for i in session["activities"][::-1] %}
+            {% if i == 0 %}
+                <h4 class="zero">Nice, staying even gives another chance: {{ i }}</h4>
+            {% endif %}
+            {% if i > 0 %}
+                <h4 class="positive">Gained: {{ i }} golds</h4>
+            {% endif %}
+            {% if i < 0 %}
+                <h4 class="negative">Ouch, 99% gamblers quit before hitting big: {{ i }} golds</h4>
+            {% endif %}
+        {% endfor %}
+    </div>
+    <div>
+        <a href="/clear">Gamble Again</a>
+    </div>
+</body>
+</html>
