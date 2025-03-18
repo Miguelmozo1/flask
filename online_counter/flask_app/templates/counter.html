@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='counter.css') }}">
+</head>
+<body>
+    <div class="display">
+        <div class="grid">
+            <h1>Your session count</h1>
+            <p>{{ session["counter"] }}</p>
+                <a href="/add_one">add one</a>
+                <a href="/add_two"> add two</a>
+                <a href="/clear"> delete cookies</a>
+            <form action="/increment" method="post">
+                <p>Increment by this much</p>
+                <input type="text" name="increment">
+                <input type="submit">
+            </form>
+        </div>
+    </div>
+</body>
+</html>
