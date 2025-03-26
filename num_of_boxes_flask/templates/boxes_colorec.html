@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colored Boxes</title>
+    <style>
+        .rows {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        .box {
+            height: 60px;
+            width: 60px;
+        }
+    </style>
+</head>
+<body>
+    <div class="rows">
+        {% for i in range(0, num) %}
+            <div class="box" style="background-color: {{color}};"></div>
+        {% endfor %}
+    </div>
+</body>
+</html>
