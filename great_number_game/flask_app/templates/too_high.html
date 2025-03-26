@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Game</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='number-game.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to the Great Number Game</h1>
+        <p>I am thinking of a number between 1 and 100</p>
+        <h3>Take a guess!</h3>
+        <div class="guess">
+            <h1 class="incorrect">Too High!</h1>
+        </div>
+        <form action="/attempt" method="post">
+            <input type="text" name="attempt">
+            <input type="submit">
+        </form>
+        <h1>Attempt: {{ session["attempt"] }}</h1>
+    </div>
+</body>
+</html>
