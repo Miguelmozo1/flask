@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users</title>
+</head>
+<body>
+    <div class="container">
+        <table>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+            </tr>
+            <!-- for loop in making multiple rows -->
+            {% for user in users %}
+            <tr>
+                <!-- for loop in retrieving all data from each user -->
+                <td>{{ user['first_name'] }}</td>
+                <td>{{ user['last_name'] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+</html>
