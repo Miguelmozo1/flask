@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+    <title>Home</title>
+</head>
+<body>
+    <div class="survey">
+        <h1>Simple Survey</h1>
+        <form action="/submit" method = "POST" id="form">
+            <label for="name">Your Name:<input type="text" name="name"></label>
+            <p>Preferred Language:</p>
+            <input type="radio" name="fav_lang" value="Ruby">
+                Ruby<br>
+            <input type="radio" name="fav_lang" value="C#">
+                C#<br>
+                <input type="radio" name="fav_lang" value="Python">
+                Python<br>
+                <input type="radio" name="fav_lang" value="Javascript">
+                Javascript<br>
+            <div class="description">
+                <label for="description">About You:</label>
+                <textarea name="description" cols="30" rows="10"></textarea>
+            </div>
+            <input type="submit" name="submit" value="submit">
+        </form>
+    </div>
+</body>
+</html>

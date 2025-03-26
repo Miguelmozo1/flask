@@ -1,0 +1,10 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+.survey {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
