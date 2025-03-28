@@ -1,0 +1,22 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.top-nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.buildings {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: space-around;
+}
+
+.form {
+    border: 3px solid black;
+    width: 15%;
+}
